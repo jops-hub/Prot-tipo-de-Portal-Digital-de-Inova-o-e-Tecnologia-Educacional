@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEE/DF — Contato</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--Barra superior-->
+    <div class="top-bar"></div>
+<!-- Cabeçalho principal -->
+<header>
+  <div class="logo">
+    <title>images</title>
+    <img src="imagem/logo-gdf.png" alt=""> 
+    <class="title">
+        <h1>SECRETARIA DE EDUCAÇÃO/DF</h1>
+        <p>SEE/DF</p>
+    </div>
+    <div class="logo">
+        <a href="https://www.facebook.com/educadf/" target="_blank"><img src="imagem/logo-facebook.png" alt="Facebook">
+        <a href="https://x.com/educadf" target="_blank"><img src="imagem/logo-X.png" alt="X">
+        <a href="https://www.youtube.com/channel/UCbtXh3i-jkJ6vi-5nkzqukw" target="_blank"><img src="imagem/logo-youtube.png" alt="YouTube">
+        <a href="https://www.instagram.com/educadf/" target="_blank"><img src="imagem/logo-instagram.png" alt="Instagram">
+        <a href="https://www.tiktok.com/@educadf" target="_blank"><img src="imagem/logo-toktok.png" alt="TikTok">
+        <a href="https://www.flickr.com/photos/199955563@N07/albums/" target="_blank"><img src="imagem/logo-flickr.png" alt="Flickr"></a>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Digite aqui o que está procurando">
+        <button>Buscar</button>
+    </div>
+</header>
+<!--Menu principal-->
+<nav class="main-menu">
+    <ul>
+        <li><a href="index.html" class="active">Início</a></li>
+      <li><a href="Projetos-nas-Escolas.html">Projetos nas Escolas</a></li>
+      <li><a href="Cursos-e-Oficinas.html">Cursos e Oficinas</a></li>
+      <li><a href="Laboratórios-Virtuais.html">Laboratórios Virtuais</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+</nav>
+
+<style>
+    :root{
+        --azul-topo:#005EB8;
+        --azul-menu:#0B3A67;
+        --azul-link:#005EB8;
+        --cinza-borda:#e5e7eb;
+        --fundo:#ffffff;
+        --texto:#111827;
+    }
+    *{box-sizing:border-box}
+    body{
+        margin:0; font-family: Arial, Helvetica, sans-serif;
+        color:var(--texto); background:var(--fundo);
+        line-height:1.5;
+    }
+
+    /* TOPO */
+    .topo{
+        background:var(--azul-topo);
+        padding:10px 16px;
+        display:flex; align-items:center; justify-content:space-between;
+        color:#fff;
+    }
+    .topo .logo{
+        display:flex; align-items:center; gap:10px;
+    }
+    .topo .logo img{ height:40px; }
+    .topo .titulo{
+        font-weight:bold; font-size:20px; letter-spacing:.2px;
+    }
+    .redes{
+        display:flex; gap:8px; align-items:center;
+    }
+    .redes a img{ height:28px; width:28px; display:block; }
+
+    /* MENU */
+    .menu{
+        background:var(--azul-menu);
+        padding:8px 10px;
+        display:flex; gap:18px; flex-wrap:wrap;
+    }
+    .menu a{
+        color:#fff; text-decoration:none; font-size:14px; padding:4px 6px;
+    }
+    .menu a:hover, .menu a:focus{ text-decoration:underline; }
+
+    /* CONTEÚDO */
+    .container{ max-width:1100px; margin:24px auto; padding:0 16px; }
+    .titulo-pagina{ text-align:center; margin:0 0 8px 0; }
+    .subtitulo{ text-align:center; color:#374151; margin:0 0 24px 0; }
+
+    /* ALERTA/DESTAQUE */
+    .card{
+        border:1px solid var(--cinza-borda); border-radius:8px; padding:14px 16px; background:#f9fafb;
+        margin: 0 auto 20px auto; max-width:800px;
+    }
+
+    /* TABELA */
+    .tabela-wrap{
+        overflow:auto; border:1px solid var(--cinza-borda); border-radius:8px;
+    }
+    table{
+        border-collapse:collapse; width:100%; min-width:640px; background:#fff;
+    }
+    thead th{
+        background:#f3f4f6; color:#111827; text-align:left; font-weight:bold;
+        padding:12px; border-bottom:1px solid var(--cinza-borda);
+    }
+    tbody td{
+        padding:12px; border-bottom:1px solid var(--cinza-borda);
+    }
+    tbody tr:nth-child(even){ background:#fafafa; }
+
+    a{ color:var(--azul-link); }
+    a:focus{ outline:2px solid #93c5fd; outline-offset:2px; }
+
+    /* RODAPÉ */
+    footer{
+        margin-top:32px; padding:18px 12px; text-align:center; font-size:13px;
+        border-top:1px solid var(--cinza-borda);
+    }
+    footer .links a{ color:var(--azul-link); margin:0 6px; text-decoration:none; }
+    footer .links a:hover{text-decoration:underline;}
+
+    /* RESPONSIVO */
+    @media (max-width:640px){
+        .topo .titulo{ font-size:16px; }
+        .topo .logo img{ height:32px; }
+        .redes a img{ height:24px; width:24px; }
+        table{ min-width:520px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- MENU PRINCIPAL -->
+<main class="container" role="main">
+    <h1 class="titulo-pagina">Fale com a Secretaria</h1>
+    <p class="subtitulo">Canais oficiais de atendimento por setor.</p>
+
+    <!-- DESTAQUE / INFORMAÇÕES GERAIS -->
+    <section class="card" aria-label="Informações gerais">
+        <strong>Horário de atendimento:</strong> segunda a sexta, 8h às 18h.<br>
+        <strong>E-mail institucional (geral):</strong> <a href="mailto:atendimento@seec.df.gov.br">atendimento@seec.df.gov.br</a>
+    </section>
+
+    <!-- TABELA DE CONTATOS -->
+    <section aria-labelledby="tabela-contatos">
+        <h2 id="tabela-contatos" class="visually-hidden" style="position:absolute;left:-9999px">Contatos por setor</h2>
+
+        <div class="tabela-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Setor</th>
+                        <th scope="col">Contato</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gabinete</td>
+                        <td><a href="tel:+556133182986">(61) 3318-2986</a></td>
+                    </tr>
+                    <tr>
+                        <td>Ouvidoria</td>
+                        <td><a href="tel:162">162</a></td>
+                    </tr>
+                    <tr>
+                        <td>Corregedoria</td>
+                        <td><a href="tel:+556133182979">(61) 3318-2979</a></td>
+                    </tr>
+                    <tr>
+                        <td>Assessoria de Comunicação</td>
+                        <td><a href="tel:+556133182972">(61) 3318-2972</a></td>
+                    </tr>
+                    <tr>
+                        <td>Assessoria Jurídico‑Legislativa</td>
+                        <td><a href="tel:+556133182973">(61) 3318-2973</a></td>
+                    </tr>
+                    <tr>
+                        <td>Subsecretaria de Administração Geral – SUAG</td>
+                        <td><a href="tel:+556133182897">(61) 3318-2897</a></td>
+                    </tr>
+                    <tr>
+                        <td>Subsecretaria de Apoio às Políticas Educacionais – SUAPE</td>
+                        <td><a href="tel:+556133182959">(61) 3318-2959</a></td>
+                    </tr>
+                    <tr>
+                        <td>Subsecretaria de Educação Básica – SUBEB</td>
+                        <td><a href="tel:+556133182921">(61) 3318-2921</a></td>
+                    </tr>
+                    <tr>
+                        <td>Subsecretaria de Educação Inclusiva e Integral – SUBIN</td>
+                        <td><a href="tel:+556133182929">(61) 3318-2929</a></td>
+                    </tr>
+                    <tr>
+                        <td>Subsecretaria de Formação Continuada dos Profissionais da Educação – EAPE</td>
+                        <td>Gabinete <a href="tel:+556133182400">(61) 3318-2400</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Setor de Inscrição</strong></td>
+                        <td>
+                            <a href="tel:+556133182424">(61) 3318-2424</a> e
+                            <a href="tel:+556133182425">(61) 3318-2425</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Subsecretaria de Gestão de Pessoas – SUGEP</td>
+                        <td><a href="tel:+556133182863">(61) 3318-2863</a></td>
+                    </tr>
+                    <tr>
+                        <td>Subsecretaria de Infraestrutura Escolar – SIAE</td>
+                        <td><a href="tel:+556133182966">(61) 3318-2966</a></td>
+                    </tr>
+                    <tr>
+                        <td>Subsecretaria de Planejamento, Acompanhamento e Avaliação Educacional – SUPLAV</td>
+                        <td><a href="tel:+556133182937">(61) 3318-2937</a></td>
+                    </tr>
+                    <tr>
+                        <td>Coordenações Regionais de Ensino</td>
+                        <td><a href="#">Lista completa</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- OPCIONAL: MAPA (substitua o src pelo embed do endereço da SEEDF) -->
+    <!--
+    <section class="card" aria-label="Localização">
+        <h3 style="margin-top:0">Localização</h3>
+        <iframe title="Mapa SEEDF" src="URL_DO_GOOGLE_MAPS_EMBED" width="100%" height="300" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    -->
+
+</main>
+
+<footerstyle="background-color:#f2f2f2; padding:20px; text-align:center; font-size:14px;">
+        <div>
+          <strong>Links Institucionais:</strong><br>
+          <a href="https://www.transparencia.df.gov.br" target="_blank">Transparência</a> |
+          <a href="https://www.ouvidoria.df.gov.br" target="_blank">Ouvidoria</a> |
+          <a href="https://www.acessoainformacao.gov.br" target="_blank">Acesso à Informação</a> |
+          <a href="https://www.portal.df.gov.br" target="_blank">Portal de Governo</a> |
+          <a href="https://www.dadosabertos.df.gov.br" target="_blank">Dados Abertos</a> |
+          <a href="https://www.lgpd.df.gov.br" target="_blank">LGPD</a>
+        </div>
+        <br>
+        <div>
+        <p>&copy; 2026 Jahaziel Obed Pomahuallca Silva</p>
+    <p>Contato: atendimento@see.df.gov.br</p>
+</footer>
+</body>
+</html>
