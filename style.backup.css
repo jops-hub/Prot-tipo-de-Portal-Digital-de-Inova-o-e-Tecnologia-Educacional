@@ -1,266 +1,181 @@
 /* RESET */
-* { box-sizing: border-box; }
-body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #000; background: #fff; }
+*{
+  box-sizing:border-box;
+}
 
-/* Paleta */
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#ffffff;
+}
+
+/* CORES */
 :root{
-  --azul-topo: #0B5FA5;   /* faixa azul clara (ícones + busca) */
-  --azul-menu: #003F73;   /* barra do menu (azul escuro) */
-  --fundo-header: #FFFFFF;/* faixa superior branca (logo + título) */
-  --cinza-borda: #e5e7eb;
+  --azul-topo:#0B4F8A;
+  --azul-menu:#0A3F66;
+  --cinza-header:#e6e6e6;
 }
 
-/* ----- Cabeçalho principal ----- */
+/* ============================= */
+/* BARRA SUPERIOR (links governo)*/
+/* ============================= */
+
+.top-bar{
+  background:var(--azul-topo);
+  color:#fff;
+  font-size:14px;
+  padding:6px 20px;
+  text-align:right;
+}
+
+.top-bar a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:15px;
+}
+
+/* ============================= */
+/* HEADER PRINCIPAL              */
+/* ============================= */
+
 header{
-  background: var(--fundo-header);
-  border-bottom: 1px solid var(--cinza-borda);
-  padding: 10px 12px;
+  background:var(--cinza-header);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:15px 20px;
 }
 
-/* Linha do título (logo + título) */
-header .logo:nth-of-type(2) img{
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-  margin-right: 12px;
-  vertical-align: middle;
-}
-header .title{
-  display: inline-block;
-  vertical-align: middle;
-}
-header .title h1{
-  margin: 0;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: .3px;
-}
-header .title p{
-  margin: 2px 0 0;
-  font-size: 12px;
-  color: #666;
+/* LOGO */
+
+header img{
+  height:55px;
 }
 
-/* ----- Faixa azul clara com ícones + busca ----- */
-/* Como você não tem um contêiner específico para a 'faixa azul', vamos usar a barra superior (.top-bar) como faixa */
-.top-bar{
-  background: var(--azul-topo);          /* AZUL claro como no anexo */
-  padding: 10px 12px;
-  display: grid;
-  grid-template-columns: 1fr auto;       /* ícones à esquerda, busca à direita */
-  align-items: center;
-  gap: 12px;
+/* TÍTULO */
+
+.title{
+  flex:1;
+  margin-left:15px;
 }
 
-/* Ícones sociais: estão no segundo .logo dentro do header */
-header .logo:nth-of-type(2){
-  /* este seletor pega o bloco onde você colocou os links dos ícones */
-}
-header .logo:nth-of-type(2) img{
-  width: 34px;          /* tamanho dos círculos */
-  height: 34px;
-  object-fit: contain;
-  margin-right: 12px;   /* espaço entre ícones */
-  vertical-align: middle;
+.title{
+  flex:1;
+  text-align:center;
 }
 
-/* Área de busca */
+.title h1{
+  margin-right:10px;
+  font-size:32px;
+  font-weight:bold;
+  color: #080101;
+}
+
+.title p{
+  margin:0;
+  font-size:14px;
+  color:black;
+}
+
+/* ÍCONES SOCIAIS */
+
+.logo{
+  display:flex;
+  gap:12px;
+}
+
+.logo img{
+  width:36px;
+  height:36px;
+}
+
+/* BUSCA */
+
 .search{
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  justify-content: flex-end;
+  display:flex;
+  align-items:center;
+  margin-left:20px;
 }
+
 .search input{
-  padding: 7px 10px;
-  width: 280px;
-  border: none;
-  border-radius: 3px;
+  padding:6px 10px;
+  border:1px solid #999;
 }
+
 .search button{
-  padding: 7px 12px;
-  background: #0A3F66;   /* tom mais escuro para contraste */
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  padding:6px 12px;
+  background:var(--azul-menu);
+  color:#fff;
+  border:none;
+  margin-left:5px;
+  cursor:pointer;
 }
-/* MENU: centralizado na barra azul escura */
+
+/* ============================= */
+/* MENU PRINCIPAL                */
+/* ============================= */
+
 .main-menu{
-  display: block;
-  width: 100%;
-  background: var(--azul-menu, #003F73);
-  clear: both;
-  text-align: center; /* fallback útil */
+  background:var(--azul-menu);
 }
+
 .main-menu ul{
-  margin: 0;
-  padding: 8px 12px;
-  list-style: none;
+  margin:0;
+  padding:10px;
+  list-style:none;
 
-  display: inline-flex;     /* centraliza o bloco dentro do nav */
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+}
 
-  max-width: 1200px;
-  flex-wrap: wrap;
-  float: none !important;   /* anula float legado em ul */
-}
-.main-menu li{ 
-  margin: 0; 
-  float: none !important;   /* anula float legado em li */
-}
 .main-menu a{
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  white-space: nowrap;
-}
-.main-menu a.active{ text-decoration: underline; }
-
-/* RODAPÉ: largura total + conteúdo centralizado */
-footer {
-  display: block;
-  width: 100%;
-  clear: both;
-  margin-top: 24px; /* opcional */
-}
-footer > div {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: left; /* use center se preferir centralizado */
-}
-footer p, footer a { font-size: 14px; }
-footer a {
-  color: var(--azul-topo, #0B5FA5);
-  text-decoration: none;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:15px;
 }
 
-/* === ÍCONES: garantem linha horizontal e tamanho controlado === */
-/* (mantém o que já melhorou, reforça caso algo anterior conflite) */
-header .logo:nth-of-type(2) img{
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-  margin-right: 12px;
-  vertical-align: middle;
-}
-/* ----- Menu principal (barra azul escuro) ----- */
-.main-menu{
-  background: var(--azul-menu);
-}
-.main-menu ul{
-  margin: 0;
-  padding: 8px 12px;
-  list-style: none;
-
-  display: flex;
-  gap: 20px;
-  justify-content: center;   /* centralizado como no anexo */
-  flex-wrap: wrap;
-}
-.main-menu a{
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-}
-.main-menu a.active{ text-decoration: underline; }
-
-/* ----- Conteúdo (opcional, para melhor visual) ----- */
-main{ max-width: 1100px; margin: 16px auto 24px; padding: 0 12px; }
-.cards{ display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-.card{ border: 1px solid #eee; border-radius: 6px; padding: 12px; background: #fff; }
-
-/* Rodapé inline que você já tem */
-/* ========== MENU CENTRALIZADO (barra azul escuro) ========== */
-.main-menu {
-  display: block;                 /* garante bloco inteiro para o nav */
-  background: var(--azul-menu, #003F73);
-  width: 100%;
-  clear: both;                    /* não ‘pende’ para a direita por causa de floats anteriores */
+.main-menu a:hover{
+  text-decoration:underline;
 }
 
-.main-menu ul {
-  margin: 0;
-  padding: 8px 12px;
-  list-style: none;
+/* ============================= */
+/* CONTEÚDO                      */
+/* ============================= */
 
-  display: flex !important;       /* força flex, caso algo antigo esteja sobrescrevendo */
-  justify-content: center !important;
-  align-items: center;
-  gap: 20px;
-
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  flex-wrap: wrap;
-  float: none !important;         /* ANULA qualquer float legado */
-  text-align: center;             /* fallback se flex falhar */
+main{
+  max-width:1100px;
+  margin:25px auto;
+  padding:0 20px;
+  text-align:center;
 }
 
-.main-menu li { 
-  margin: 0; 
-  float: none !important;         /* anula float de <li> antigo, se houver */
-  display: inline-flex;           /* segura os itens lado a lado, mesmo sem flex no ul */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:20px;
 }
 
-.main-menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  white-space: nowrap;
+.card{
+  border:1px solid #ddd;
+  padding:15px;
+  border-radius:5px;
 }
 
-.main-menu a.active { text-decoration: underline; }
+/* ============================= */
+/* RODAPÉ                        */
+/* ============================= */
 
-/* ========== RODAPÉ NA LARGURA TODA, CONTEÚDO CENTRALIZADO ========== */
-footer {
-  display: block;
-  width: 100%;
-  clear: both;                    /* descola de floats do conteúdo */
-  margin-top: 24px;               /* opcional: dá respiro acima */
+footer{
+  background:#e6e6e6;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
 }
 
-/* CUIDADO: aqui é '>' (maior) literal; se colar como &gt; NÃO funciona */
-footer > div {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: left;               /* troque para center se preferir centralizado */
+footer a{
+  color:#0B4F8A;
+  text-decoration:none;
 }
-
-footer p, footer a { font-size: 14px; }
-footer a {
-  color: var(--azul-topo, #0B5FA5);
-  text-decoration: none;
-}
-
-/* Faixa azul clara (ícones + busca) */
-.top-bar{
-  background: var(--azul-topo, #0B5FA5);
-  padding: 10px 12px;
-  display: grid;
-  grid-template-columns: 1fr auto; /* ícones à esquerda, busca à direita */
-  align-items: center;
-  gap: 12px;
-}
-
-/* ========== ÍCONES: linha horizontal e tamanho controlado ========== */
-header .logo:nth-of-type(2) img {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-  margin-right: 12px;
-  vertical-align: middle;
-}
-
-/* ========== FAILSAFE: se ALGO ainda empurra o menu pra direita ========== */
-.main-menu, .main-menu ul, .main-menu li {
-  position: relative;             /* neutraliza alguns resets agressivos */
-  right: auto !important;
-  left: auto !important;
-}
-``
